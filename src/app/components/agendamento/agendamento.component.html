@@ -1,0 +1,61 @@
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+
+<main class="container">
+    <div class="container__img">
+        <img class="photo"
+            src="https://s3-alpha-sig.figma.com/img/023a/98b3/b27f50f642d2c1e8302d0a9a4426f26f?Expires=1683504000&Signature=ErnvS7tnA85lFga45lmEFTh0xFfpPo-NKFaHLZHrjPtI2cBcWSdxd1bsnfFz47C~lZicdlTuHSEFERs7odBN7ZM88Q4sROb4UInD8ANuOZiShnx1qElEIqCjtj~EuzpytIV59DekMfa0az4X9PNEJZLfMwJej2sdcDyqhJzM-zsCTpL8EM2BjXkejMDgyK5rM1mDoutATA5HaD90orXSC-3RsewtY4hmjnPBADGJyNF1-JWWzwQ0bAamb70pvYd-sICysu4i3vAURRZi052HnVcKfGyazbAyLVBdd2fcKoygcL-DRVPktqr31mLDawGBs2zcvMZMVoUwPKC-DH8MLg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4">
+    </div><br>
+    <section>
+        <form class="card" [formGroup]="agendaForm" (ngSubmit)="AddAgendamento(agendaForm.value)">
+            <div class="card__line">
+                <label class="label">Especialidade: </label>
+                <input class="input" formControlName="especialidade" type="text"><br>
+            </div>
+            <input class="input__line" disabled>
+            <div class="card__line">
+                <label class="label">Data: </label>
+                <input class="input" formControlName="data" type="text"><br>
+            </div>
+            <input class="input__line" disabled>
+            <div class="card__line">
+                <label class="label">Local: </label>
+                <input class="input" formControlName="local" type="text"><br>
+            </div>
+            <input class="input__line" disabled>
+            <div class="card__line">
+                <label class="label">Hora: </label>
+                <input class="input" formControlName="hora" type="text"><br>
+            </div>
+            <input class="input__line" disabled><br>
+            <div class="card__button">
+                <button type="button" (click)="AddAgendamento(agendaForm.value)" class="button">Salvar</button>
+            </div>
+        </form>
+    </section><br>
+    
+    <div class="container__Card">
+        <div class="Card_card" *ngFor="let novoAgendamento of formList">
+            <p class="Card_Text">
+                {{ novoAgendamento.data }}<br>
+                {{ novoAgendamento.especialidade }}<br>
+                {{ novoAgendamento.local }} </p>
+            <p class="hora">{{ novoAgendamento.hora }}</p>
+            <button type="button" (click)="editAgendaForms(editAgendaId,novoAgendamento)"> <span
+                    class="material-symbols-outlined">edit</span>
+            </button>
+            <button type="button" (click)="remove(novoAgendamento.id)"> <span class="material-symbols-outlined">
+                    delete
+                </span>
+            </button>
+        </div>
+    </div>
+    <span id="icon" class="material-symbols-outlined" id="home" routerLink="/home">
+        home
+    </span>
+</main>
