@@ -6,20 +6,22 @@
 <section class="body">
     <section class="container__Card">
         <h1 class="Card__title">Esta semana
-            <hr>
         </h1>
+        <hr>
         <div class="Card" *ngFor="let agendamento of agendamentoList">
-            <p class="Card_Text">{{ agendamento.data}}<br>
-                {{ agendamento.especialidade}}<br>
-                {{ agendamento.local}}<br>
-            </p>
+            <div class="Card_Text">
+                <p>{{ agendamento.data}}</p>
+                <p>{{ agendamento.especialidade}}</p>
+                <p>Local: {{ agendamento.local}}</p>
+            </div>
             <p class="hora">{{ agendamento.hora}}</p>
-
         </div>
         <div class="Card" *ngFor="let novoAgendamento of formList">
-            <p class="Card_Text">{{ novoAgendamento.data}}<br>
-                {{ novoAgendamento.especialidade}}<br>
-                {{ novoAgendamento.local}} </p>
+            <div class="Card_Text">
+              <p>{{ novoAgendamento.data}}</p>
+              <p>{{ novoAgendamento.especialidade}}</p>
+              <p>Local: {{ novoAgendamento.local}}</p>
+            </div>
             <p class="hora">{{ novoAgendamento.hora}}</p>
         </div>
     </section>

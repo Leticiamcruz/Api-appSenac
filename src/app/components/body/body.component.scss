@@ -14,14 +14,22 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 8px;
+    padding: 20px 8px;
 }
 .Card__title{
-    height:50px ;
     color: white;
     text-align: left;
     font-size: 40px;
+    font-weight: 500;
+    margin: 0;
 }
+
+hr {
+  width: 80%;
+  border: 2px solid white;
+  border-radius: 5px;
+}
+
 .Card{
     display: grid;
     grid-template: auto / 60% 40%;
@@ -39,7 +47,10 @@
     flex-direction: row;
     text-align: start;
     font-size: 20px;
-    color:black
+    color:black;
+}
+.Card__Text p:first-child {
+  color: #ccc;
 }
 .hora{
     text-align: right;
